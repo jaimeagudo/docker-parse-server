@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+#
+# Intended to import keys easily from Github or whatever, e.g.
+# $ curl https://github.com/yongjhih.keys | docker exec -i parse-server ssh-add-key
+#
 
 set -e
 
