@@ -1,5 +1,7 @@
 FROM debian:jessie
 
+# Exposes "parse/cloud" folder as git repo to allow live updates via ssh
+
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
