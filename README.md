@@ -56,7 +56,7 @@ $ docker run -d                                \
 
 # Test parse-server
 $ curl -X POST \
-  -H "X-Parse-Application-Id: {appId}" \
+  -H "X-Parse-Application-Id: {APP_ID}" \
   -H "Content-Type: application/json" \
   -d '{}' \
   http://localhost:1337/parse/functions/hello
@@ -79,12 +79,12 @@ $ docker run -d \
 # before accessing the portal else you cant get in
 
 $  docker run -d \
-             -e APP_ID=$(APP_ID)\
-             -e MASTER_KEY=$(MASTER_KEY)\
+             -e APP_ID=${APP_ID}\
+             -e MASTER_KEY=${MASTER_KEY}\
              -e SERVER_URL=http://localhost:1337/parse \
              -e PARSE_DASHBOARD_ALLOW_INSECURE_HTTP=1  \
-             -e USER1=yourUsername  \
-             -e USER1_PASSWORD=yourUsernamesPassword \
+             -e USER1={DASHBOARD_USER1}  \
+             -e USER1_PASSWORD={DASHBOARD_USER1_PASSWORD} \
              -p 4040:4040                      \
              --link parse-server               \
              --name parse-dashboard            \
